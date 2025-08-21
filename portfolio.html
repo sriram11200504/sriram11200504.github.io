@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>SRIRAM LOHITH V</title>
+ <meta name="robots" content="noindex, nofollow">
+ <meta name="description" content="Full-stack developer specializing in Business Systems. Building scalable web applications with expertise in Python, C++, and Java.">
+
+
+ <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700&display=swap" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400&display=swap" rel="stylesheet">
+ <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+
+
+ <style>
+ :root {
+ --primary-bg: #150D48;
+ --secondary-bg: #0C0A33;
+ --primary-color: #D9E1FF;
+ --accent-color: #8061FF;
+ --font-body: "Arimo", sans-serif;
+ --font-heading: "Syne", sans-serif;
+ }
+
+
+ body {
+ background-color: var(--primary-bg);
+ color: var(--primary-color);
+ font-family: var(--font-body);
+ line-height: 1.6;
+ margin: 0;
+ padding: 0;
+ -webkit-font-smoothing: antialiased;
+ text-rendering: optimizeLegibility;
+ overflow-x: hidden;
+ }
+
+
+ main {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ width: 100%;
+ max-width: 1200px;
+ margin: 0 auto;
+ padding-top: 2rem;
+ }
+
+
+ .card {
+ background-color: var(--secondary-bg);
+ padding: 4rem 2rem;
+ margin: 2rem 0;
+ border-radius: 0.5em;
+ position: relative;
+ overflow: hidden;
+ width: 90%;
+ max-width: 1000px;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ text-align: center;
+ box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+ opacity: 0;
+ transform: translateY(20px);
+ animation: fadeInUp 0.6s ease-out forwards;
+ transition: box-shadow 0.3s ease-in-out;
+ }
+
+
+ .card:hover {
+ box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+ }
+
+
+ .card.accent {
+ background-color: var(--accent-color);
+ color: black;
+ }
+
+
+ .card-image-bg {
+ position: absolute;
+ inset: 0;
+ background-position: center;
+ background-size: cover;
+ background-repeat: no-repeat;
+ z-index: 0;
+ transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+ filter: blur(2px);
+ }
+
+
+ .card:hover .card-image-bg {
+ transform: scale(1.05);
+ filter: blur(0);
+ }
+
+
+ .card-image-bg::after {
+ content: "";
+ position: absolute;
+ inset: 0;
+ background-color: rgba(12, 10, 51, 0.7);
+ transition: background-color 0.3s ease-in-out;
+ }
+
+
+ .card.accent .card-image-bg::after {
+ background-color: rgba(128, 97, 255, 0.5);
+ }
+
+
+ .card-content {
+ position: relative;
+ z-index: 1;
+ width: 100%;
+ max-width: 800px;
+ padding: 2rem 0;
+ }
+
+
+ h1, h2, h3, h4 {
+ font-family: var(--font-heading);
+ font-weight: 700;
+ line-height: 1.25;
+ color: white;
+ margin: 1.5em 0;
+ text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+ }
+
+
+ h1 { font-size: 2.75rem; }
+ h2 { font-size: 2.2rem; }
+ h3 { font-size: 1.7rem; }
+ h4 { font-size: 1.3rem; }
+
+
+ p {
+ font-size: 1.1rem;
+ margin: 1em 0;
+ color: #e0e0e0;
+ }
+
+
+ .button-group {
+ display: flex;
+ gap: 1.5em;
+ margin-top: 2em;
+ }
+
+
+ .btn {
+ padding: 1em 2em;
+ border-radius: 0.3em;
+ text-decoration: none;
+ font-weight: 600;
+ transition: background-color 0.3s, transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
+ position: relative;
+ overflow: hidden;
+ }
+
+
+ .btn::before {
+ content: '';
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ width: 300%;
+ height: 300%;
+ background: rgba(255, 255, 255, 0.1);
+ transition: all 0.6s ease;
+ transform: translate(-50%, -50%) rotate(45deg);
+ }
+
+
+ .btn:hover::before {
+ width: 0;
+ height: 0;
+ }
+
+
+ .btn.solid {
+ background-color: var(--accent-color);
+ color: white;
+ box-shadow: 0 0 15px rgba(128, 97, 255, 0.3);
+ }
+
+
+ .btn.outline {
+ background-color: transparent;
+ border: 2px solid var(--accent-color);
+ color: var(--accent-color);
+ box-shadow: 0 0 15px rgba(128, 97, 255, 0.3);
+ }
+
+
+ .btn:hover {
+ transform: translateY(-3px);
+ box-shadow: 0 4px 20px rgba(128, 97, 255, 0.6);
+ }
+
+
+ blockquote {
+ border-left: 5px solid var(--accent-color);
+ padding-left: 1.2em;
+ margin: 2em 0;
+ font-style: italic;
+ color: #ccc;
+ }
+
+
+ ul {
+ list-style: none;
+ padding-left: 0;
+ margin: 1.5em 0;
+ }
+
+
+ li {
+ margin-bottom: 0.7em;
+ display: flex;
+ align-items: center;
+ gap: 10px;
+ }
+
+
+ .icon {
+ color: var(--accent-color);
+ }
+
+
+ a {
+ color: var(--accent-color);
+ text-decoration: none;
+ border-bottom: 1px solid transparent;
+ transition: border-bottom 0.3s ease-in-out;
+ }
+
+
+ a:hover {
+ border-bottom: 1px solid var(--accent-color);
+ }
+
+
+ .grid-container {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+ gap: 2.5em;
+ text-align: left;
+ margin-top: 2.5em;
+ }
+
+
+ .grid-container > div {
+ padding: 1.5em;
+ border-radius: 0.3em;
+ background-color: rgba(255, 255, 255, 0.05);
+ transition: transform 0.2s ease-in-out;
+ }
+
+
+ .grid-container > div:hover {
+ transform: translateY(-5px);
+ }
+
+
+ .project-details-grid {
+ display: grid;
+ grid-template-columns: 1fr;
+ gap: 2em;
+ text-align: left;
+ margin-top: 2em;
+ }
+
+
+ @media (min-width: 768px) {
+ .project-details-grid {
+ grid-template-columns: repeat(2, 1fr);
+ }
+ }
+
+
+ .project-details-grid > div {
+ padding: 1.5em;
+ border-radius: 0.3em;
+ background-color: rgba(255, 255, 255, 0.05);
+ transition: transform 0.2s ease-in-out;
+ }
+
+
+ .project-details-grid > div:hover {
+ transform: translateY(-5px);
+ }
+
+
+ .project-details-grid h3 {
+ margin-top: 0;
+ }
+
+
+ @keyframes fadeInUp {
+ from {
+ opacity: 0;
+ transform: translateY(20px);
+ }
+ to {
+ opacity: 1;
+ transform: translateY(0);
+ }
+ }
+</style>
+</head>
+<body>
+ <main>
+ <section class="card">
+ <div class="card-image-bg" style="background-image: url('https://cdn.gamma.app/q8uc581n75lp8a6/generated-images/dGJNC_Sy0ScHcsNRVIBbn.png');"></div>
+ <div class="card-content">
+ <p>SRIRAM LOHITH V</p>
+ <h1>Building the Future: Tech & Business Solutions</h1>
+ <p>Explore my journey in Computer Science with a specialization in Business Systems, showcasing innovative projects and practical expertise.</p>
+ <div class="button-group">
+ <a href="#projects" class="btn solid">View Projects</a>
+ <a href="#contact" class="btn outline">Connect Now</a>
+ </div>
+ </div>
+ </section>
+
+
+ <section class="card">
+ <div class="card-content">
+ <h4><i data-feather="user" class="icon"></i> ABOUT ME</h4>
+ <h2>A Driven BTech Student Bridging Tech and Business</h2>
+ <p>As a 3rd-year BTech student in Computer Science at VIT-AP University, I'm deeply fascinated by how technology can transform business operations. My specialization in Business Systems equips me with a unique perspective, allowing me to craft solutions that are not just technically sound, but also strategically aligned with business goals.</p>
+ <p>I am passionate about creating impactful solutions that address real-world challenges. My academic journey and hands-on project experience are geared towards developing innovative systems that drive efficiency and growth in various industries.</p>
+ </div>
+ </section>
+
+
+ <section class="card">
+ <div class="card-content">
+ <h4><i data-feather="tool" class="icon"></i> MY TOOLKIT</h4>
+ <h2>Technical Skills for Robust Solutions</h2>
+ <div class="grid-container">
+ <div>
+ <h4>Programming Languages</h4>
+ <p>Proficient in Python, C++, and Java, enabling me to tackle diverse programming challenges and build scalable applications.</p>
+ </div>
+ <div>
+ <h4>Web Technologies</h4>
+ <p>Solid grasp of HTML, CSS, and JavaScript for crafting intuitive and responsive web interfaces.</p>
+ </div>
+ <div>
+ <h4>Business Systems Tools</h4>
+ <p>Experience with ERP basics, SQL for database management, and various data visualization tools to transform raw data into actionable insights.</p>
+ </div>
+ <div>
+ <h4>Version Control</h4>
+ <p>Expertise in Git & GitHub ensures seamless collaboration, efficient code management, and robust project versioning.</p>
+ </div>
+ </div>
+ </div>
+ </section>
+
+
+ <section class="card" id="projects">
+ <div class="card-content">
+ <h4><i data-feather="code" class="icon"></i> MY PROJECTS</h4>
+ <h2>Detailed Look at My Work</h2>
+ <div class="project-details-grid">
+ <div>
+ <h3>TicketEase</h3>
+ <p>Built a dynamic, full-stack event management platform using **React.js, Node.js, and MongoDB**. This project features a seamless ticket booking system and a custom API for real-time updates, demonstrating my proficiency in building and integrating both front-end and back-end services.</p>
+ </div>
+ <div>
+ <h3>E-commerce Store</h3>
+ <p>Designed and developed a responsive e-commerce storefront using modern **HTML5 and CSS3**. The project focuses on creating a user-friendly interface and a robust structural design, built with scalability in mind for future integration with a back-end commerce API.</p>
+ </div>
+ </div>
+ </div>
+ </section>
+
+
+ <section class="card">
+ <div class="card-content">
+ <h4><i data-feather="briefcase" class="icon"></i> PROFESSIONAL EXPERIENCE</h4>
+ <h2>Bridging Academia and Industry</h2>
+ <div class="project-details-grid">
+ <div>
+ <h3>Java Developer Intern</h3>
+ <p>Gained hands-on experience in **Java development** at Mindenious Tech, contributing to backend systems and learning enterprise-level software practices.</p>
+ </div>
+ <div>
+ <h3>Full Stack Developer Intern</h3>
+ <p>Honed my full-stack skills at Rinex Technologies, working on both **frontend and backend development** to deliver complete web solutions.</p>
+ </div>
+ <div>
+ <h3>Django Intern</h3>
+ <p>Currently enhancing my expertise as a Django Intern at Perpex, focusing on **robust web framework development** and API integration.</p>
+ </div>
+ </div>
+ </div>
+ </section>
+
+
+ <section class="card accent" id="contact">
+ <div class="card-image-bg" style="background-image: url('https://cdn.gamma.app/q8uc581n75lp8a6/generated-images/uu5S9JTZUykAgtfwUbdkj.png');"></div>
+ <div class="card-content">
+ <h4><i data-feather="send" class="icon"></i> LET'S CONNECT</h4>
+ <h2>Reach Out and Collaborate</h2>
+ <ul>
+ <li style="color: white;"><b>Email:</b> <a href="mailto:sriramlohith25@gmail.com" style="color: white;">sriramlohith25@gmail.com</a></li>
+ <li style="color: white;"><b>LinkedIn:</b> <a href="http://www.linkedin.com/in/sriram-lohith-vanapalli-7aa02b305" style="color: white;">linkedin.com/in/sriram-lohith-vanapalli-7aa02b305</a></li>
+ <li style="color: white;"><b>GitHub:</b> <a href="https://github.com/sriram11200504" style="color: white;">github.com/sriram11200504</a></li>
+ </ul>
+ <p>I am always open to networking, mentorship opportunities, and engaging in exciting new projects. Let's build the future together!</p>
+ </div>
+ </section>
+ </main>
+
+
+ <script>
+ feather.replace()
+ </script>
+</body>
+</html>
